@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 function Table() {
-    
+
     const [name, setName] = useState({
         name: 'name',
         surname: 'surname',
