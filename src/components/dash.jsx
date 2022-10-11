@@ -1,4 +1,5 @@
 import './css/dash.css';
+import { Table } from './table';
 
 function Dash() {
     return (
@@ -19,7 +20,7 @@ function Dash() {
             </nav>
             <div class="content">
                 <div class="item-1">
-
+                    <Table />
                 </div>
                 <div class="item-2">
 
