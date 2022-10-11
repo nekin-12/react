@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import helloWorld  from './helloWorld';
+
 
 function App() {
   return (
@@ -20,6 +22,17 @@ function App() {
       </header>
     </div>
   );
+}
+
+
+function testProps(){
+  return (
+    <div className='testProps'>
+      <helloWorld>test</helloWorld>
+    </div>
+  );
+
+
 }
 
 export default App;
