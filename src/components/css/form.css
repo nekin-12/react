@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+body{
+    background-image: url("background.jpg");
+    background-size: cover;   
+}
+
+@media only screen and (min-width: 1000px){
+    h1, h2{
+        color: azure;
+        text-align: center;
+    }
+
+    .form{
+        background-color: #7222db;
+        box-shadow: 5px 5px 15px 4px rgba(0,0,0,0.66);
+        border-radius: 10px;
+        min-width: 15vw;
+        min-height: 25vh;
+        color: #eee3fc;
+        position: absolute;
+        top: 7vw;
+        left: 90vh;
+    }
+    
+    .col{
+        position: relative; 
+        left: 5vh;
+        width: 10vw;
+    }
+    .form-email input{ 
+        background-color: #eee3fc;
+        border-radius: 5px;
+    }
+    .form-pwd input{
+        background-color: #eee3fc;
+        border-radius: 5px;
+    }
+
+    /* Submit */
+    .form-submit .button{
+        position: absolute;
+        top: 110%;
+        left: 20%;
+        
+        background-color: #6639a1;
+        border-radius: 20px;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .form-submit .button:hover{
+        background-color: #9e6dde;
+        border-radius: 5px;
+    }
+}
