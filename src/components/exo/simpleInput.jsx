@@ -14,7 +14,7 @@ import useInput from './useInput';
 
 const SimpleInput = (props) => { 
 
-  const {  //fonction déclaration des variables et récupération de celle-ci en enlevant les espaces inutiles
+  const {  //fonction déclaration des variables 
 
     value: enteredName, 
 
