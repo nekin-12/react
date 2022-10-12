@@ -3,73 +3,114 @@ import { useState, useEffect } from 'react';
 
 const Form = (props) => {
 
-    const [nameState, setNameState] = useState('default@gmail.com');
-    const [nameIsValid, setNameIsValid] = useState(false);
-    const [nameIsTouched, setNameIsTouched] = useState(false);
+    //Login DB infos
+    const database = [
+        {
+            email: "test@gmail.com",
+            pwd: "1234"
+        }
+    ]
+
+    const [mailState, setMailState] = useState('');
+    const [mailIsValid, setMailIsValid] = useState(false);
+    const [mailIsTouched, setMailIsTouched] = useState(false);
+
+    const [pwdState, setPwdState] = useState('');
+    const [pwdIsValid, setPwdIsValid] = useState(false);
+    const [pwdIsTouched, setPwdIsTouched] = useState(false);
 
     useEffect(() => {
-        if (nameIsValid) console.log('inside useEffect')
-    }, [nameIsValid]);
+        if (mailIsValid, pwdIsValid) console.log('mail and pwd is ok')
+    }, [mailIsValid, pwdIsValid]);
 
-    const nameChangeHandler = (e) => {
-        setNameState(e.target.value);
+    const mailChangeHandler = (e) => {
+        setMailState(e.target.value);
+    };
+    const pwdChangeHandler = (e) => {
+        setPwdState(e.target.value);
     };
 
-    const nameBlurHandler = (e) => {
-        setNameIsTouched(true);
+    const mailBlurHandler = (e) => {
+        setMailIsTouched(true);
 
-        if (nameState.trim() === '') {
-            setNameIsValid(false)
+        if (mailState.trim() === '') {
+            setMailIsValid(false)
             return;
         }
+    };
+    const pwdBlurHandler = (e) => {
+        setPwdIsTouched(true);
 
-    }
+        if (pwdState.trim() === '') {
+            setPwdIsValid(false)
+            return;
+        }
+    };
 
     const forSubmissionHandler = (event) => {
         event.preventDefault();
-        setNameIsTouched(true);
 
-        if (nameState.trim() === '') {
-            setNameIsValid(false)
+        setMailIsTouched(true);
+        setPwdIsTouched(true);
+
+        if (mailState.trim() === '') {
+            setMailIsValid(false)
             return;
         }
-        setNameIsValid(true);
+        setMailIsValid(true);
 
+        setPwdState('');
+        if (pwdState.trim() === '') {
+            setPwdIsValid(false)
+            return;
+        }
+        setPwdIsValid(true);
 
-        // .... traitement exemple: requete POST
-
-
-        setNameState('');
+        setPwdState('');
     };
 
-    const nameInputIsInvalid = !nameIsValid && nameIsTouched;
-    const nameInputClasses = nameInputIsInvalid ? 'form-control invalid' : 'form-control';
+    const submitHandle = (event) => {
+        event.preventDefault();
+
+    }
+
+    const mailInputIsInvalid = !mailIsValid && mailIsTouched;
+    const mailInputClasses = mailInputIsInvalid ? 'form-control invalid' : 'form-control';
+    const pwdInputIsInvalid = !pwdIsValid && pwdIsTouched;
+    const pwdInputClasses = pwdInputIsInvalid ? 'form-control invalid' : 'form-control';
 
     return (
         <form class="form" onSubmit={forSubmissionHandler}>
             <h2>Welcome</h2>
-            <div class={nameInputClasses}>
+            <div>
                 <div class="col">
-                    <div class="form-email">
-                        <input value={nameState} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="email" name="email" id="email" placeholder="E-mail*" />
+                    <div class="form-email" className={mailInputClasses}>
+                        <input value={mailState} onChange={mailChangeHandler} onBlur={mailBlurHandler} type="email" name="email" id="email" placeholder="E-mail*" />
                     </div>
-                    {nameInputIsInvalid && (
+                    {mailInputIsInvalid && (
                         <p className='error-text'>Email cannot be empty</p>
                     )}
 
                     <br />
-                    <div class="form-pwd">
-                        <input type="password" name="password" id="password" placeholder="Password*" />
+
+                    <div class="form-pwd" className={pwdInputClasses}>
+                        <input value={pwdState} onChange={pwdChangeHandler} onBlur={pwdBlurHandler} type="password" name="password" id="password" placeholder="Password*" />
                     </div>
+                    {pwdInputIsInvalid && (
+                        <p className='error-text'>Password cannot be empty</p>
+                    )}
+                    
                     <br />
                 </div>
             </div>
             <div className="form-submit">
-                <input class="button" type="submit" value="Connexion" />
+                <input onSubmit={submitHandle} class="button" type="submit" value="Connect" />
             </div>
-            {nameState}
+            
         </form>
+        
     )
+    console.log(mailState)
 }
 
 export { Form };

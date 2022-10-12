@@ -13,9 +13,9 @@ function TableProject() {
     const createData = (name, surname, age) => {
         return { name, surname, age };
     }
-    const rows = [
+    const database = [
         createData('Jean', 'DUPONT', 15),
-        createData('Jean', 'DUPONT', 16),
+        createData('Ed', 'DWARD', 16),
         createData('Jean', 'DUPONT', 15)
     ];
 
@@ -31,7 +31,7 @@ function TableProject() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
+                        {database.map((row) => (
                             <TableRow>
                                 <TableCell>{row.name}</TableCell>
                                 <TableCell>{row.surname}</TableCell>

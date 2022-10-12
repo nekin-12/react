@@ -17,33 +17,22 @@ const SimpleInput = (props) => {
   const {  //fonction déclaration des variables 
 
     value: enteredName, 
-
     isValid: enteredNameIsValid, 
-
     hasError: nameInputHasError, 
-
     valueChangeHandler: nameChangedHandler, 
-
     inputBlurHandler: nameBlurHandler, 
-
     reset: resetNameInput 
-
+    
   } = useInput(value => value.trim() !== ''); 
    
 
   const [enteredEmail, setEnteredEmail] = useState(''); // Fonction permettant de récuperer l'entrer de l'uilisateur 
-
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false); // boolean permettant de connaitre l'état (actif ou non) de l'input email
-
   const enteredEmailIsValid = enteredEmail.includes('@'); 
-
   const enteredEmailIsInvalid = !enteredEmailIsValid && enteredEmailTouched; 
-
   let formIsValid = false; 
 
-
   if (enteredNameIsValid && enteredEmailIsValid) { 
-
     formIsValid = true; 
   } 
 

@@ -16,7 +16,7 @@ function Dash() {
                         <a href="">Product</a>
                     </li>
                     <li class="nav__items ">
-                        <a href="form.jsx">Logout</a>
+                        <a href="form">Logout</a>
                     </li>
                 </ul>
             </nav>
