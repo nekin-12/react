@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom/client';
 import '././components/css/index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import {Dash} from './components/dash';
-import { Form } from './components/form';
+import {Dash} from './components/dash';
+// import { Form } from './components/form';
 // import SimpleInput from './components/exo/simpleInput';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     {/* <Dash /> */}
+     <Dash />
     {/* <SimpleInput /> */}
-    <Form />
+    {/* <Form /> */}
   </React.StrictMode>
 );
 

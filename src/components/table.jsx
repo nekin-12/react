@@ -1,5 +1,4 @@
-// import { useState, useEffect } from 'react';
-//import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,38 +9,40 @@ import Paper from '@mui/material/Paper';
 
 function TableProject() {
 
-    const createData = (name, surname, age) => {
-        return { name, surname, age };
+    const [item, setItem] = useState([])
+
+    const callApi = () => {
+    fetch('https://api.randomuser.me/')
+        .then((response) => console.log(response.json()))
+            // .then((item) => setItem(item.all))
+        .catch((error) => console.log(error));
     }
-    const database = [
-        createData('Jean', 'DUPONT', 15),
-        createData('Ed', 'DWARD', 16),
-        createData('Jean', 'DUPONT', 15)
-    ];
+        
+
+
+    useEffect(() => {
+        callApi()
+    }, [])
 
     return (
         <>
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
-                        <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Surname</TableCell>
+                        <TableRow className={callApi}>
+                            <TableCell>id</TableCell>
+                            <TableCell>name</TableCell>
                             <TableCell>Age</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {database.map((row) => (
-                            <TableRow>
-                                <TableCell>{row.name}</TableCell>
-                                <TableCell>{row.surname}</TableCell>
-                                <TableCell>{row.age}</TableCell>
-                            </TableRow>
-                        ))}
+                        <TableRow>
+                            <TableCell >{item}</TableCell>
+                        </TableRow>
                     </TableBody>
                 </Table>
             </TableContainer>
-
+             
         </>
     )
 
