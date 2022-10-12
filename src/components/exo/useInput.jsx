@@ -2,7 +2,7 @@
 
 import { useState } from 'react'; 
 
-//
+//Fonction useInput callback qui vérifie les états des inputs 
 
 const useInput = (validateValue) => { 
 
