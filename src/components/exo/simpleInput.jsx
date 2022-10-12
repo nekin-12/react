@@ -35,19 +35,19 @@ const SimpleInput = (props) => {
 
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false); // boolean permettant de connaitre l'état (actif ou non) de l'input email
 
-  const enteredEmailIsValid = enteredEmail.includes('@'); //
+  const enteredEmailIsValid = enteredEmail.includes('@'); 
 
-  const enteredEmailIsInvalid = !enteredEmailIsValid && enteredEmailTouched; //
+  const enteredEmailIsInvalid = !enteredEmailIsValid && enteredEmailTouched; 
 
-  let formIsValid = false; //
+  let formIsValid = false; 
 
 
-  if (enteredNameIsValid && enteredEmailIsValid) { //
+  if (enteredNameIsValid && enteredEmailIsValid) { 
 
     formIsValid = true; 
   } 
 
-  const emailInputChangeHandler = (event) => { //
+  const emailInputChangeHandler = (event) => { 
 
     setEnteredEmail(event.target.value); 
 
