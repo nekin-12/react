@@ -9,17 +9,17 @@ table thead tr th{
 }
 .cellNameFirst{
     text-align: center;
-    color: rgb(205, 169, 50);
+    /* color: rgb(205, 169, 50); */
 }
 .cellNameLast{
     text-align: center;
-    color: rgb(50, 53, 205);
+    /* color: rgb(50, 53, 205); */
 }
 .cellEmail{
     text-align: left;
-    color: rgb(205, 50, 143);
+    /* color: rgb(205, 50, 143); */
 }
 .cellImg{
     text-align: left;
-    color: rgb(205, 97, 50);
+    /* color: rgb(205, 97, 50); */
 }
