@@ -1,54 +1,104 @@
 import React, { useState, useEffect } from 'react';
+import './css/table.css';
 
 function TableProject() {
+  const axios = require('axios').default;
 
-    const [item, setItem] = useState([])
+  const [user, userSet] = useState('')
 
-    const callApi = () => {
-        fetch('https://api.randomuser.me/')
-            .then((response) => console.log(response.json()))
-            // .then((item) => setItem(item.all))
-            .catch((error) => console.log(error));
-    }
+  const [load, loadSet] = useState(true)
 
-    const user = [{   
-        results: []
+  const getAllUser = () => {
+    axios.get('https://api.randomuser.me/')
+      .then(function (response) {
+        console.log(response.data.results[0]);
+        const user = response.data.results[0];
+        userSet(user);
+        loadSet(false)
 
-    }]
-    
+      })
+      .catch(function (error) {
+        // en cas d’échec de la requête
+        console.log(error);
+      })
+  }
 
-    useEffect(() => {
-        callApi()
-    }, [])
+  useEffect(() => {
+    getAllUser();
+  }, [])
 
-    return (
-        <table>
-          <thead>
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Email</th>
+          <th>Picture</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td>
             <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              {load ? (
+                <div>loading...</div>
+              ) : (
+                <div>
+                  <td className='cellId'>{user.id.name}</td>
+                </div>
+              )}
             </tr>
-          </thead>
-          <tbody>
+          </td>
+          <td>
             <tr>
-              <td>1</td>
-              <td>
-                {user.map((item)=>
-                    <tr>
-                        <td>{item.results}</td>
-                        <td></td>
-                    </tr>
-                    )
-                }
-              </td>
-
+              {load ? (
+                <div>loading...</div>
+              ) : (
+                <div>
+                  <td className='cellNameFirst'>{user.name.first}</td>
+                </div>
+              )}
             </tr>
-          </tbody>
-        </table>
-      );
+          </td>
+          <td>
+            <tr>
+              {load ? (
+                <div>loading...</div>
+              ) : (
+                <div>
+                  <td className='cellNameLast'>{user.name.last}</td>
+                </div>
+              )}
+            </tr>
+          </td>
+          <td>
+            <tr>
+              {load ? (
+                <div>loading...</div>
+              ) : (
+                <div>
+                  <td className='cellEmail'>{user.email}</td>
+                </div>
+              )}
+            </tr>
+          </td>
+          <td>
+            <tr>
+              {load ? (
+                <div>loading...</div>
+              ) : (
+                <div>
+                  <td className='cellImg'><img src={user.picture.thumbnail} /></td>
+                </div>
+              )}
+            </tr>
+          </td>
 
+        </tr>
+      </tbody>
+    </table>
+  );
 }
-
 export { TableProject };

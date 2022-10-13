@@ -29,13 +29,19 @@ h1{
 .item-1{
   position: relative;
   top: 5vh;
-  margin-left: 35em;
+  margin-left: 45em;
   color: white;
   background-color: rgb(35, 35, 35);
   width: 30%;
-  height: 40%;
+  height: 50%;
   font-family: "Roboto";
   font-weight: bold;
+}
+
+.contentItem-1{
+  position: relative;
+  top: 15%;
+  margin-left: 3em;
 }
 
 

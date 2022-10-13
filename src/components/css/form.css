@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 body{
     background-image: url("background.jpg");
+    font-family: 'Roboto';
     background-size: cover;   
 }
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 600px){
     h1, h2{
         color: azure;
         text-align: center;
@@ -14,18 +15,16 @@ body{
         background-color: #7222db;
         box-shadow: 5px 5px 15px 4px rgba(0,0,0,0.66);
         border-radius: 10px;
-        min-width: 15vw;
-        min-height: 25vh;
+        padding-right: 3vw;
+        padding-bottom: 3vh;
         color: #eee3fc;
-        position: absolute;
+        position: fixed;
         top: 7vw;
-        left: 90vh;
+        left: 45%;
     }
     
-    .col{
-        position: relative; 
-        left: 5vh;
-        width: 10vw;
+    .colLogin{
+        margin-left: 3em;
     }
     .form-email input{ 
         background-color: #eee3fc;
@@ -37,22 +36,46 @@ body{
     }
 
     /* Submit */
-    .form-submit .button{
-        position: absolute;
-        top: 110%;
-        left: 20%;
+    .form-submit .btnSubmit{
+        position: relative;
+        bottom: 10%;
+        left: 30%;
         
-        background-color: #6639a1;
+        background-color: #b07cf3;
         border-radius: 20px;
         border: none;
-        color: white;
+        color: rgb(0, 0, 0);
         padding: 16px 32px;
+
         text-decoration: none;
         margin: 4px 2px;
         cursor: pointer;
     }
-    .form-submit .button:hover{
-        background-color: #9e6dde;
+    .form-submit .btnSubmit:hover{
+        color: azure;
+        background-color: #261143;
         border-radius: 5px;
     }
+
+    .btnLoginInfo{
+        position: absolute;        
+        top: 5%;
+        left: 99.5%;
+
+        background-color: #7222db;
+        box-shadow: 5px 5px 15px 4px rgba(0,0,0,0.66);
+        border-radius: 0px 20px 20px 0px;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        margin: 2px 1px;
+        cursor: pointer;
+    }
+    .btnLoginInfo:hover{
+        z-index: 0;
+        background-color: #320e61;
+        color: white;
+    }
 }
+

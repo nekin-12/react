@@ -1,0 +1,25 @@
+table thead tr th{
+    text-align: center;
+    color: yellowgreen;
+}
+
+.cellId{
+    text-align: left;
+    color: yellowgreen;
+}
+.cellNameFirst{
+    text-align: center;
+    color: rgb(205, 169, 50);
+}
+.cellNameLast{
+    text-align: center;
+    color: rgb(50, 53, 205);
+}
+.cellEmail{
+    text-align: left;
+    color: rgb(205, 50, 143);
+}
+.cellImg{
+    text-align: left;
+    color: rgb(205, 97, 50);
+}
